@@ -1,10 +1,19 @@
-function add(){
-  var number1 = document.getElementById('number1').value;
-  var number2 = document.getElementById('number2').value;
-  var result = parseInt(number1) + parseInt(number2);
+$(document).ready(onDocumentReady)
 
-  document.getElementById('result').value = result;
+function onDocumentReady(){
+
+  function add(){
+    //var number1 = document.getElementById('number1').value;
+    var number1 = $('#number1').val();
+    var number2 = $('#number2').val();
+    var result = parseInt(number1) + parseInt(number2);
+
+    $('#result').val(result);
+    $('#result').addClass('shake');
+  }
+
+  //var button = document.getElementById('addButton');
+  //button.addEventListener('click', add);
+
+  $('#addButton').on('click', add);
 }
-
-var button = document.getElementById('addButton');
-button.addEventListener('click', add);
