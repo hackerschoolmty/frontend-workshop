@@ -5,6 +5,7 @@
   <title>Frontend workshop</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
+
 </head>
 <body class="container">
   <div class="row">
@@ -90,7 +91,7 @@
               Number 1:
             </td>
             <td>
-              <input class="form-control" type="text">
+              <input id="number1" class="form-control" type="text">
             </td>
           </tr>
           <tr>
@@ -98,15 +99,15 @@
               Number 2:
             </td>
             <td>
-              <input class="form-control" type="text">
+              <input id="number2" class="form-control" type="text">
             </td>
           </tr>
           <tr>
             <td>
-              <button class="btn btn-success" type="button">Add</button>
+              <button id="addButton" class="btn btn-success" type="button">Add</button>
             </td>
             <td>
-              <span><span>
+              <input id="result" class="form-control" type="text" readonly="readonly">
             </td>
           </tr>
         </table>
