@@ -2,43 +2,12 @@ body {
   font-family: Arial;
 }
 
-.dashed-border {
-  border: dashed 3px black;
-}
-
-.custom-class {
-  float:left;
-  padding: 15px;
-}
-
-.text-centered {
+.title-div {
   text-align: center;
+  box-shadow: 3px 3px 10px gray;
 }
 
-.black-shadow {
-  box-shadow: 3px 3px 5px black;
-}
-
-.red-bg {
-  background-color: red;
-}
-
-.blue-bg {
-  background-color: blue;
-}
-
-.green-bg {
-  background-color: green;
-}
-
-.orange-bg {
-  background-color: orange;
-}
-
-.purble-bg {
-  background-color: purple;
-}
-
-.gray-bg {
-  background-color: gray;
+.photo {
+  max-width: 160px;
+  border: dashed 3px black;
 }
