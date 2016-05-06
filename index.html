@@ -6,6 +6,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
   <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+  <script src="js/guestbook.js"></script>
+  <script src="js/main.js"></script>
 </head>
 <body class="container">
   <div class="row">
@@ -83,31 +85,17 @@
             Please sign my awesome guestbook
           </div>
           <div class="panel-body">
-            <div class="guestbook-item">
-              <table class="table ">
-                <tr>
-                  <td class="col-sm-1"><img class="guestbook-photo" src="http://static.sched.org/a3/1056000/avatar.jpg.320x320px.jpg" alt="image" /></td>
-                  <td class="col-sm-1"><strong>Obama</strong></td>
-                  <td >Your are awesome</td>
-                </tr>
-                <tr>
-                  <td class="col-sm-1"><img class="guestbook-photo" src="http://www.joelsedano.com/blog/wp-content/uploads/2012/05/nieto.jpg" alt="image"/></td>
-                  <td class="col-sm-1"><strong>Enrique</strong></td>
-                  <td>Orale</td>
-                </tr>
-                <tr>
-                  <td class="col-sm-1"><img class="guestbook-photo" src="http://betsuites.com/assets/images/avatars/656554.png" alt="image"/></td>
-                  <td class="col-sm-1"><strong>MC Dinero</strong></td>
-                  <td>Hola amigo</td>
-                </tr>
+            <div class="guestbook-comments">
+              <table id="comments" class="table">
+                <!-- comments! -->
               </table>
             </div>
           </div>
           <div class="panel-footer">
-            <input class="form-control guestbook-input" type="text" placeholder="image">
-            <input class="form-control guestbook-input" type="text" placeholder="name">
-            <input class="form-control guestbook-input" type="text" placeholder="comment">
-            <button class="btn btn-success guestbook-input" type="button" name="button">Send</button>
+            <input id="photo" class="form-control guestbook-input" type="text" placeholder="image">
+            <input id="name" class="form-control guestbook-input" type="text" placeholder="name">
+            <input id="comment" class="form-control guestbook-input" type="text" placeholder="comment">
+            <button id="sendComment" class="btn btn-success guestbook-input" type="button" name="button">Send</button>
           </div>
         </div>
       </div>

@@ -7,7 +7,29 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-var comments = [];
+var comments = [
+  {
+    photo: 'http://hackerschool.mx/assets/img/about/edo.jpg',
+    name: 'Eduardo',
+    comment: 'Chingón'
+  },
+  {
+    photo: 'http://hackerschool.mx/assets/img/about/jp.jpeg',
+    name: 'Juan',
+    comment: 'Ese brayan!'
+  },
+  {
+    photo: 'http://hackerschool.mx/assets/img/about/alan.jpg',
+    name: 'Alan',
+    comment: 'Aprende React we'
+  }
+];
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 app.get("/getComments", function(req, res){
   res.send(JSON.stringify(comments));
