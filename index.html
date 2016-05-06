@@ -85,33 +85,8 @@
         </div>
       </div>
 
-      <div class="col-sm-4">
-        <table class="table">
-          <tr>
-            <td>
-              Number 1:
-            </td>
-            <td>
-              <input id="number1" class="form-control" type="text">
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Number 2:
-            </td>
-            <td>
-              <input id="number2" class="form-control" type="text">
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <button id="addButton" class="btn btn-success" type="button">Add</button>
-            </td>
-            <td>
-              <input id="result" class="form-control" type="text" readonly="readonly">
-            </td>
-          </tr>
-        </table>
+      <div id="calculator" class="col-sm-4">
+
       </div>
     </div>
 
@@ -121,5 +96,9 @@
       </div>
     </div>
   </div>
+  
+  <script type="text/javascript">
+    $('#calculator').calculator();
+  </script>
 </body>
 </html>
