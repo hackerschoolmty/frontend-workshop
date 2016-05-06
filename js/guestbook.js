@@ -1,10 +1,10 @@
-/*
 function loadGuestbook(){
   loadComments();
-}
-*/
 
-/*
+  //$('#send').on('click', sendComment);
+  //$('#refresh').on('click', loadComments);
+}
+
 function loadComments(){
 
   $('#comments').empty();
@@ -16,9 +16,7 @@ function loadComments(){
     }
   });
 }
-*/
 
-/*
 function buildComment(photo, name, comment){
     var html = "<tr>"
       +" <td class='col-sm-1'><img class='guestbook-photo' src='"+photo+"' alt='image' /></td>"
@@ -27,5 +25,23 @@ function buildComment(photo, name, comment){
       +" </tr>";
 
     return html;
+}
+
+/*
+function sendComment(){
+  var photo = $('#photo').val();
+  var name = $('#name').val();
+  var comment = $('#comment').val();
+
+  var data = {
+    photo: photo,
+    name: name,
+    comment: comment
+  };
+
+  $.post('http://localhost:3000/addComment', data, function(){
+    loadComments();
+    $('#comment').val('');
+  });
 }
 */
