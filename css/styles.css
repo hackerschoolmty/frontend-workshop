@@ -8,7 +8,7 @@ body {
 }
 
 .photo {
-  max-width: 16px;
+  max-width: 160px;
   border: dashed 3px black;
 }
 
