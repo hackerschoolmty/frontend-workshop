@@ -22,10 +22,9 @@ window.Guestbook = React.createClass({
   },
 
   postComment: function(data) {
-    console.log(data);
     // $.post('http://52.37.118.66:8080/addComment', data, function(){
-    //   this.clearForm();
-    // });
+    //   //this.loadComments();
+    // }.bind(this));
   },
 
 

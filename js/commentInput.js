@@ -11,31 +11,31 @@ window.CommentInput = React.createClass({
     var imageUrl = this.refs.imageUrl.value;
     var name = this.refs.name.value;
     var comment = this.refs.comment.value;
-    // var validationStatus = {
-    //   inValidImage: false,
-    //   inValidName: false
-    // };
-    // if (!name || name.length < 1) {
-    //   validationStatus.inValidName = true;
-    // }
-    // if (!imageUrl || imageUrl.length < 1) {
-    //   validationStatus.inValidImage = true;
-    // }
-    //
-    // if (validationStatus.inValidImage  === true || validationStatus.inValidName === true) {
-    //   this.setState(validationStatus);
-    //   return;
-    // }
+    var validationStatus = {
+      inValidImage: false,
+      inValidName: false
+    };
     if (!name || name.length < 1) {
-      this.state.inValidName = true;
+      validationStatus.inValidName = true;
     }
     if (!imageUrl || imageUrl.length < 1) {
-      this.state.inValidImage = true;
+      validationStatus.inValidImage = true;
     }
 
-    if (this.state.inValidImage  === true || this.state.inValidName === true) {
+    if (validationStatus.inValidImage  === true || validationStatus.inValidName === true) {
+      this.setState(validationStatus);
       return;
     }
+    // if (!name || name.length < 1) {
+    //   this.state.inValidName = true;
+    // }
+    // if (!imageUrl || imageUrl.length < 1) {
+    //   this.state.inValidImage = true;
+    // }
+    //
+    // if (this.state.inValidImage  === true || this.state.inValidName === true) {
+    //   return;
+    // }
 
     var data = {
       photo: imageUrl,
@@ -44,6 +44,10 @@ window.CommentInput = React.createClass({
     };
     this.props.postComment(data);
     this.clearForm();
+    this.setState({
+      inValidImage: false,
+      inValidName: false
+    });
   },
 
   clearForm: function() {
