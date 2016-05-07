@@ -22,9 +22,9 @@ window.Guestbook = React.createClass({
   },
 
   postComment: function(data) {
-    // $.post('http://52.37.118.66:8080/addComment', data, function(){
-    //   //this.loadComments();
-    // }.bind(this));
+    $.post('http://52.37.118.66:8080/addComment', data, function(){
+      this.loadComments();
+    }.bind(this));
   },
 
 
@@ -40,7 +40,7 @@ window.Guestbook = React.createClass({
             <button id="refresh" className="btn btn-info guestbook-input" type="button" name="button" onClick={this.loadComments.bind(this)}>Refresh</button>
           </div>
           < CommentList comments={this.state.comments} />
-          < CommentInput postComment={this.postComment} />
+          < CommentInput postComment={this.postComment} totalComments={this.state.comments.length} />
         </div>
       </div>
     );

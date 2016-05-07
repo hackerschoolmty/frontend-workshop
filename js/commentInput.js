@@ -59,6 +59,9 @@ window.CommentInput = React.createClass({
   render: function() {
     return (
       <div className="panel-footer">
+        <span>
+           Total Mensajes <span className="badge">{this.props.totalComments}</span>
+        </span>
         <div className={this.state.inValidImage === true ? "form-group has-error has-feedback" : "form-group"}>
           <input type="text" ref="imageUrl" placeholder="image" className="form-control guestbook-input" id="imageUrl" />
           {this.state.inValidImage === true ? <span id="imageUrlStatus" >Requerido</span>: null}
