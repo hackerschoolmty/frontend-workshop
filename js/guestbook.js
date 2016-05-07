@@ -17,7 +17,7 @@ var Guestbook = React.createClass({
   /*
   loadComments: function(){
 
-    $.getJSON('http://localhost:3000/getComments', function(comments){
+    $.getJSON('http://52.37.118.66:8080/getComments', function(comments){
       this.setState({comments:comments});
     }.bind(this));
   },
