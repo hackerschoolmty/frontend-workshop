@@ -1,4 +1,4 @@
-var Guestbook = React.createClass({
+window.Guestbook = React.createClass({
 
   getInitialState: function(){
     return {comments:[
@@ -11,52 +11,37 @@ var Guestbook = React.createClass({
   },
 
   componentDidMount: function() {
-    //this.loadComments();
+    this.loadComments();
   },
 
-  /*
-  loadComments: function(){
 
+  loadComments: function(){
     $.getJSON('http://52.37.118.66:8080/getComments', function(comments){
       this.setState({comments:comments});
     }.bind(this));
   },
-  */
+
+  postComment: function(data) {
+    console.log(data);
+    // $.post('http://52.37.118.66:8080/addComment', data, function(){
+    //   this.clearForm();
+    // });
+  },
+
+
+
 
   render: function() {
-
-    var comments = this.state.comments.map(function(comment) {
-      return (
-        <tr key={comment.name}>
-          <td className='col-sm-1'><img className='guestbook-photo' src={comment.photo} alt='image' /></td>
-          <td className='col-sm-1'><strong>{comment.name}</strong></td>
-          <td >{comment.comment}</td>
-        </tr>
-      );
-    });
 
     return (
       <div className="col-sm-12">
         <div className="panel panel-info">
           <div className="panel-heading">
             Please sign my awesome guestbook
-            <button id="refresh" className="btn btn-info guestbook-input" type="button" name="button">Refresh</button>
+            <button id="refresh" className="btn btn-info guestbook-input" type="button" name="button" onClick={this.loadComments.bind(this)}>Refresh</button>
           </div>
-          <div className="panel-body">
-            <div className="guestbook-comments">
-              <table id="comments" className="table">
-                <tbody>
-                  {comments}
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div className="panel-footer">
-            <input className="form-control guestbook-input" type="text" placeholder="image" />
-            <input className="form-control guestbook-input" type="text" placeholder="name" />
-            <input className="form-control guestbook-input" type="text" placeholder="comment" />
-            <button className="btn btn-success guestbook-input" type="button" name="button">Send</button>
-          </div>
+          < CommentList comments={this.state.comments} />
+          < CommentInput postComment={this.postComment} />
         </div>
       </div>
     );
@@ -68,8 +53,6 @@ ReactDOM.render(
   <Guestbook />,
   document.getElementById('guestbook')
 );
-
-
 
 /*function loadGuestbook(){
   loadComments();
