@@ -6,8 +6,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
   <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
-  <script src="js/guestbook.js"></script>
-  <script src="js/main.js"></script>
+  <script src="https://fb.me/react-15.0.2.min.js"></script>
+  <script src="https://fb.me/react-dom-15.0.2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+  <script type="text/babel" src="js/guestbook.js"></script>
 </head>
 <body class="container">
   <div class="row">
@@ -79,27 +81,8 @@
       </div>
     </div>
 
-      <div class="col-sm-12">
-        <div class="panel panel-info">
-          <div class="panel-heading">
-            Please sign my awesome guestbook
-            <button id="refresh" class="btn btn-info guestbook-input" type="button" name="button">Refresh</button>
-          </div>
-          <div class="panel-body">
-            <div class="guestbook-comments">
-              <table id="comments" class="table">
-                <!-- comments! -->
-              </table>
-            </div>
-          </div>
-          <div class="panel-footer">
-            <input id="photo" class="form-control guestbook-input" type="text" placeholder="image">
-            <input id="name" class="form-control guestbook-input" type="text" placeholder="name">
-            <input id="comment" class="form-control guestbook-input" type="text" placeholder="comment">
-            <button id="send" class="btn btn-success guestbook-input" type="button" name="button">Send</button>
-          </div>
-        </div>
-      </div>
+    <div id="guestbook">
+
     </div>
 
     <div class="col-sm-12">
