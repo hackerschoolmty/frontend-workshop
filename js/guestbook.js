@@ -9,7 +9,7 @@ function loadComments(){
 
   $('#comments').empty();
 
-  $.getJSON('http://localhost:3000/getComments', function(comments){
+  $.getJSON('http://52.37.118.66:8080/getComments', function(comments){
     for (var i = comments.length -1; i >=0; i--) {
       var newComment = buildComment(comments[i].photo, comments[i].name, comments[i].comment);
       $('#comments').append(newComment);
